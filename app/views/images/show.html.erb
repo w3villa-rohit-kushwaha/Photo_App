@@ -1,0 +1,23 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @image %>
+<h1>Image Details</h1>
+
+<p><strong>Name:</strong> <%= @image.name %></p>
+
+<h1>Image Details</h1>
+
+<p><strong>Name:</strong> <%= @image.name %></p>
+
+<div>
+  <% if @image.picture.attached? %>
+    <%= image_tag url_for(@image.picture) %>
+  <% end %>
+</div>
+
+<div>
+  <%= link_to "Edit this image", edit_image_path(@image) %> |
+  <%= link_to "Back to images", images_path %>
+
+  <%= button_to "Destroy this image", @image, method: :delete %>
+</div>
